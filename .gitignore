@@ -12,9 +12,6 @@
 # icon
 /favicon.ico
 
-# broswer caches
-/cache/*
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
