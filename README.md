@@ -87,6 +87,20 @@ script_settings = {
 1.  在`settings.py`文件中将`use_baidu_api`键对应的值改为`true`
 2.  在`api_token.json`文件中填入申请到的`app id`、`api key`、`secret key`分别填入对应的键中
 
+## 自动安装依赖
+
+脚本会在首次运行后安装依赖，以后的运行中不会重复安装。但是你可以手动让脚本进行一次更新：
+
+你可以通过以下命令再次安装依赖：
+
+```powershell
+pip install -r requirements.txt
+```
+
+你还可以通过将`library/run_time.json`文件中的`is_first_time`键对应的值改为`true`来使下一次运行前自动安装依赖
+
+*悄悄告诉你，也可以通过双击`install_requirement.bat`文件再次安装依赖，~~那些不认真看文档的人肯定看不见这行~~*字
+
 ## 特性
 
 -   能够以飞一般的速度答题
@@ -99,6 +113,7 @@ script_settings = {
 -   自动识别二维码
 -   使用`easyocr`进行本地二维码识别
 -   使用`baidu-aip`，支持使用百度文字识别api进行二维码识别，以提高识别的准确率
+-   首次使用脚本可以自动安装依赖的`pip`包
 
 ## 贡献者
 
