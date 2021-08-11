@@ -1,0 +1,11 @@
+{
+    "start_test": "div.btn_cg",
+    "question": "div.ti",
+    "all_selections": "#tm > div.xx",
+    "selection": "#tm > div:nth-child(%d) > label > span:nth-child(3)",
+    "check_box": "#tm > div:nth-child(%d) > label > input[type=radio]",
+    "finished_img": "#djimg > img",
+    "collect_item_button": "#djAlert > div.djtc_cha",
+    "next_level_button": "#btnNext",
+    "level_list": ["bggk", "rgxz", "tsjh", "dzzy", "dzfw"]
+}

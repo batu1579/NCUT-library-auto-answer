@@ -1,0 +1,11 @@
+{
+    "start_test": "img.cg",
+    "question": "div.wt",
+    "all_selections": "div.da > div",
+    "selection": "div.da > div:nth-child(%d) > label > span:nth-child(3)",
+    "check_box": "div.da > div:nth-child(%d) > label > input[type=radio]",
+    "finished_img": "#djAlert > img",
+    "collect_item_button": "#djAlert",
+    "next_level_button": "#gameRole > img",
+    "level_list": ["bggk", "rgxz", "tsjh", "dzzy", "dzfw"]
+}

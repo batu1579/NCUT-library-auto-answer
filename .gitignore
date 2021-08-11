@@ -1,3 +1,19 @@
+# log file
+/logs/*
+
+# web drivers
+/src/drivers
+/src/drivers.json
+
+# verifiy code
+/src/img/*
+
+# icon
+/favicon.ico
+
+# broswer caches
+/cache/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,0 +1,45 @@
+{
+    // 开发者模式（输出更详细的日志）
+    "dev_mode": false,
+    
+    // 驱动文件地址（如果没有为空即可，会自动下载匹配的驱动）
+    "driver_path": "",
+
+    // 本机使用的浏览器（要与所使用的驱动文件对应）
+    //  - edge
+    //  - chrome
+    "browser": "edge",
+
+    // 每次获取元素时等待的时间（秒）
+    "wait_time": 0.1,
+
+    // 运行时显示浏览器窗口
+    "show_window": true,
+
+    // 缓存位置
+    "cache_path": ".\\cache",
+
+    // 缓存大小
+    "cache_size": 102400,
+
+    // 验证码图片地址
+    "veri_code_path": ".\\src\\img\\veri_code.png",
+
+    // 验证码图像阈值
+    "threshold_value": 130,
+
+    // 使用百度api识别验证码
+    "use_baidu_api": false,
+
+    // api认证信息存放位置
+    "api_token_path": ".\\api_token.json",
+
+    // 调用api时重试的次数
+    "retry_num": 3,
+
+    // 使用的皮肤（如果已经登录选择过皮肤则必须与当前的皮肤一致）
+    //  - school: 校园版
+    //  - student: 书生版
+    //  - warrior: 战士版
+    "theme": "student"
+}

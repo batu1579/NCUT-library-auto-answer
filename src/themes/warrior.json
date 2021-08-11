@@ -1,0 +1,11 @@
+{
+    "start_test": "img.go",
+    "question": "#tm",
+    "all_selections": "#options > ul > li",
+    "selection": "#options > ul > li:nth-child(%d) > label > span:nth-child(4)",
+    "check_box": "#options > ul > li:nth-child(%d) > label > label",
+    "finished_img": "#djimg > img",
+    "collect_item_button": "#djAlert > div.djtc_cha",
+    "next_level_button": "#btnNext",
+    "level_list": ["bggk", "rgxz", "tsjh", "szzy", "dzfw"]
+}
