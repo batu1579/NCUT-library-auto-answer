@@ -4,13 +4,13 @@
 Author: BATU1579
 Date: 2021-08-10 16:49:21
 LastEditors: BATU1579
-LastEditTime: 2021-08-12 04:35:07
+LastEditTime: 2021-08-12 05:51:42
 Description: file content
 '''
 from loguru import logger
 from library.use_data import get_json_data
 from sys import stderr
-import settings
+import library.settings as profile
 
 
 # 日志文件
@@ -25,7 +25,7 @@ LOG.add(
 
 # 读取常量
 
-CONST = settings.script_settings
+CONST = profile.script_settings
 
 DEV_MODE        = CONST["dev_mode"]
 

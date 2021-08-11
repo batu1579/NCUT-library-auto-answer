@@ -1,12 +1,13 @@
 # log file
-/logs/*
+/logs/*.log
+/logs/*.png
 
 # web drivers
 /src/drivers
 /src/drivers.json
 
 # verifiy code
-/src/img/*
+/src/img/*.png
 
 # icon
 /favicon.ico

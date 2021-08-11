@@ -93,7 +93,7 @@ script_settings = {
 
 你可以通过以下命令再次安装依赖：
 
-```powershell
+```shell
 pip install -r requirements.txt
 ```
 
