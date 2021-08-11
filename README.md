@@ -18,8 +18,8 @@ P.S. 如果有不会安装的可以看这个[教程]([全网最详细的Python�
 在开始运行脚本前需要进行一些简单的设置：
 
 1.  在`token.json`文件中填入自己的学号（id）和密码（password）
-2.  在`settings.json`文件中找到`browser`键把后面的值修改成你电脑上安装了的浏览器（目前只支持使用相同内核的`edge`和`chrome`浏览器，计划过两天添加对`firefox`的支持）
-3.  [可选] 如果你已经开始答题了，就需要在`settings.json`文件中找到`theme`键把对应的值修改成你所选取的皮肤即可。（这一步对于已经开始答题的同学十分重要，因为这个网站更换皮肤以后所有标签的`class`和`id`甚至页面布局都会改变。这就需要通过使用不同的css选择器来定位元素）
+2.  在`settings.py`文件中找到`browser`键把后面的值修改成你电脑上安装了的浏览器（目前只支持使用相同内核的`edge`和`chrome`浏览器，计划过两天添加对`firefox`的支持）
+3.  [可选] 如果你已经开始答题了，就需要在`settings.py`文件中找到`theme`键把对应的值修改成你所选取的皮肤即可。（这一步对于已经开始答题的同学十分重要，因为这个网站更换皮肤以后所有标签的`class`和`id`甚至页面布局都会改变。这就需要通过使用不同的css选择器来定位元素）
 
 ### 运行
 
@@ -29,52 +29,53 @@ P.S. 真不是我偷懒不想不弄成`exe`可执行文件，而是我和`pyinst
 
 ## 配置文件
 
-项目文件夹中的`settings.json`文件是这个脚本的配置文件。全部的设置都在这里，除了登录信息和api信息。
+项目文件夹中的`settings.py`文件是这个脚本的配置文件。全部的设置都在这里，除了登录信息和api信息。
 
-```json
-{
-    // 开发者模式（输出更详细的日志）
-    "dev_mode": false,
+```python
+script_settings = {
+
+    # 开发者模式（输出更详细的日志）
+    "dev_mode": False,
     
-    // 驱动文件地址（如果没有为空即可，会自动下载匹配的驱动）
+    # 驱动文件地址（如果没有为空即可，会自动下载匹配的驱动）
     "driver_path": "",
 
-    // 本机使用的浏览器（要与所使用的驱动文件对应）
-    //  - edge
-    //  - chrome
+    # 本机使用的浏览器（要与所使用的驱动文件对应）
+    #  - edge
+    #  - chrome
     "browser": "edge",
 
-    // 每次获取元素时等待的时间（秒）
+    # 每次获取元素时等待的时间（秒）
     "wait_time": 0.1,
 
-    // 运行时显示浏览器窗口
-    "show_window": true,
+    # 运行时显示浏览器窗口
+    "show_window": True,
 
-    // 缓存位置
+    # 缓存位置
     "cache_path": ".\\cache",
 
-    // 缓存大小
+    # 缓存大小
     "cache_size": 102400,
 
-    // 验证码图片地址
+    # 验证码图片地址
     "veri_code_path": ".\\src\\img\\veri_code.png",
 
-    // 验证码图像阈值
+    # 验证码图像阈值
     "threshold_value": 130,
 
-    // 使用百度api识别验证码
-    "use_baidu_api": false,
+    # 使用百度api识别验证码
+    "use_baidu_api": False,
 
-    // api认证信息存放位置
+    # api认证信息存放位置
     "api_token_path": ".\\api_token.json",
 
-    // 调用api时重试的次数
+    # 调用api时重试的次数
     "retry_num": 3,
 
-    // 使用的皮肤（如果已经登录选择过皮肤则必须与当前的皮肤一致）
-    //  - school: 校园版
-    //  - student: 书生版
-    //  - warrior: 战士版
+    # 使用的皮肤（如果已经登录选择过皮肤则必须与当前的皮肤一致）
+    #  - school: 校园版
+    #  - student: 书生版
+    #  - warrior: 战士版
     "theme": "student"
 }
 ```
@@ -83,7 +84,7 @@ P.S. 真不是我偷懒不想不弄成`exe`可执行文件，而是我和`pyinst
 
 脚本使用了百度文字识别api来提高验证码识别的准确度（主要是因为可以白嫖），需要到[百度AI开放平台](https://ai.baidu.com/tech/ocr/general)申请，申请方法见[这篇文章](https://ai.baidu.com/ai-doc/OCR/dk3iqnq51)
 
-1.  在`settings.json`文件中将`use_baidu_api`键对应的值改为`true`
+1.  在`settings.py`文件中将`use_baidu_api`键对应的值改为`true`
 2.  在`api_token.json`文件中填入申请到的`app id`、`api key`、`secret key`分别填入对应的键中
 
 ## 特性
