@@ -4,7 +4,7 @@
 Author: BATU1579
 Date: 2021-08-08 17:00:33
 LastEditors: BATU1579
-LastEditTime: 2021-08-12 05:19:08
+LastEditTime: 2021-08-12 18:17:43
 Description: file content
 '''
 import library.requirements
@@ -47,6 +47,7 @@ def is_veri_code_correct() -> bool:
         else:
             g.LOG.error("账号密码有误 ！")
             browser.quit()
+            g.LOG.info("浏览器已关闭 ！")
             exit()
     except Exception:
         return True

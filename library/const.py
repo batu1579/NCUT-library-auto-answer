@@ -4,7 +4,7 @@
 Author: BATU1579
 Date: 2021-08-10 16:49:21
 LastEditors: BATU1579
-LastEditTime: 2021-08-12 05:51:42
+LastEditTime: 2021-08-12 17:28:03
 Description: file content
 '''
 from loguru import logger
@@ -33,8 +33,6 @@ DRIVER_PATH     = CONST["driver_path"]
 BROWSER         = CONST["browser"]
 WAIT_TIME       = CONST["wait_time"]
 SHOW_WINDOW     = CONST["show_window"]
-CACHE_PATH      = CONST["cache_path"]
-CACHE_SIZE      = CONST["cache_size"]
 
 VERI_CODE_PATH  = CONST["veri_code_path"]
 THRESHOLD_VALUE = CONST["threshold_value"]

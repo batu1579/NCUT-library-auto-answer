@@ -4,7 +4,7 @@
 Author: BATU1579
 Date: 2021-08-12 04:31:20
 LastEditors: BATU1579
-LastEditTime: 2021-08-12 04:38:14
+LastEditTime: 2021-08-12 23:02:39
 Description: scripts settings
 '''
 
@@ -27,12 +27,6 @@ script_settings = {
 
     # 运行时显示浏览器窗口
     "show_window": True,
-
-    # 缓存位置
-    "cache_path": ".\\cache",
-
-    # 缓存大小
-    "cache_size": 102400,
 
     # 验证码图片地址
     "veri_code_path": ".\\src\\img\\veri_code.png",
