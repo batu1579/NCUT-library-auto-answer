@@ -4,7 +4,7 @@
 Author: BATU1579
 Date: 2021-08-11 15:20:04
 LastEditors: BATU1579
-LastEditTime: 2021-08-12 23:03:00
+LastEditTime: 2021-08-15 22:29:58
 Description: file content
 '''
 import logging
@@ -16,7 +16,7 @@ from time import sleep
 if g.BROWSER == "edge":
     # edge驱动设置
     from msedge.selenium_tools import Edge as Driver
-    from webdriver_manager.microsoft import EdgeChromiumDriverManager as Manager
+    from library.webdriver_manager.microsoft import EdgeChromiumDriverManager as Manager
     from msedge.selenium_tools import EdgeOptions
     options = EdgeOptions()
     options.use_chromium = True
@@ -25,7 +25,7 @@ if g.BROWSER == "edge":
 elif g.BROWSER == "chrome":
     # chrome驱动设置
     from selenium.webdriver import Chrome as Driver
-    from webdriver_manager.chrome import ChromeDriverManager as Manager
+    from library.webdriver_manager.chrome import ChromeDriverManager as Manager
     from selenium.webdriver import ChromeOptions
     options = ChromeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-logging"])  # 不显示日志

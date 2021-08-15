@@ -65,11 +65,11 @@ class Reader(object):
         if gpu is False:
             self.device = 'cpu'
             if verbose:
-                g.LOG.warning('Using CPU.')
+                g.LOG.debug('Using CPU.')
         elif not torch.cuda.is_available():
             self.device = 'cpu'
             if verbose:
-                g.LOG.warning('CUDA not available - defaulting to CPU.')
+                g.LOG.debug('CUDA not available - defaulting to CPU.')
         elif gpu is True:
             self.device = 'cuda'
         else:
@@ -84,7 +84,7 @@ class Reader(object):
             if os.path.isfile(detector_path) == False:
                 if not self.download_enabled:
                     raise FileNotFoundError("Missing %s and downloads disabled" % detector_path)
-                g.LOG.warning('Downloading detection model, please wait. '
+                g.LOG.info('Downloading detection model, please wait. '
                                'This may take several minutes depending upon your network connection.')
                 download_and_unzip(detection_models[detector_model]['url'], detection_models[detector_model]['filename'], self.model_storage_directory, verbose)
                 assert calculate_md5(detector_path) == detection_models[detector_model]['filesize'], corrupt_msg
@@ -181,7 +181,7 @@ class Reader(object):
                 if os.path.isfile(model_path) == False:
                     if not self.download_enabled:
                         raise FileNotFoundError("Missing %s and downloads disabled" % model_path)
-                    g.LOG.warning('Downloading recognition model, please wait. '
+                    g.LOG.info('Downloading recognition model, please wait. '
                                    'This may take several minutes depending upon your network connection.')
                     download_and_unzip(model['url'], model['filename'], self.model_storage_directory, verbose)
                     assert calculate_md5(model_path) == model['filesize'], corrupt_msg

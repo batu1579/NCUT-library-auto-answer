@@ -4,7 +4,7 @@
 Author: BATU1579
 Date: 2021-08-12 04:31:20
 LastEditors: BATU1579
-LastEditTime: 2021-08-12 23:02:39
+LastEditTime: 2021-08-15 22:12:30
 Description: scripts settings
 '''
 
