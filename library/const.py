@@ -4,7 +4,7 @@
 Author: BATU1579
 Date: 2021-08-10 16:49:21
 LastEditors: BATU1579
-LastEditTime: 2021-08-12 17:28:03
+LastEditTime: 2021-08-16 23:20:28
 Description: file content
 '''
 from loguru import logger
@@ -31,6 +31,7 @@ DEV_MODE        = CONST["dev_mode"]
 
 DRIVER_PATH     = CONST["driver_path"]
 BROWSER         = CONST["browser"]
+GH_TOKEN        = CONST["GitHub_token"]
 WAIT_TIME       = CONST["wait_time"]
 SHOW_WINDOW     = CONST["show_window"]
 

@@ -4,7 +4,7 @@
 Author: BATU1579
 Date: 2021-08-12 04:31:20
 LastEditors: BATU1579
-LastEditTime: 2021-08-15 22:12:30
+LastEditTime: 2021-08-16 23:20:42
 Description: scripts settings
 '''
 
@@ -20,7 +20,11 @@ script_settings = {
     # 本机使用的浏览器（要与所使用的驱动文件对应）
     #  - edge
     #  - chrome
+    #  - firefox
     "browser": "edge",
+
+    # Github个人令牌（防止github访问限制导致的下载驱动失败）
+    "GitHub_token": "",
 
     # 每次获取元素时等待的时间（秒）
     "wait_time": 0.1,

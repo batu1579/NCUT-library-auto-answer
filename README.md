@@ -17,12 +17,12 @@ P.S. 如果有不会安装的可以看这个[教程](https://zhuanlan.zhihu.com/
 
 ### 设置
 
->   目前脚本支持的浏览器只有`Edge`和`Chrome`，用`Firefox`和国产浏览器的同学们抱歉哈，之后可能会支持的
+>   目前脚本只支持 `Edge` 、 `Chrome` 和 `Firefox` 浏览器，用 `safari` 、 `opera` 和国产浏览器的同学抱歉哈，之后可能会支持的。（目前下载没有使用SSL验证，需要注意一下，如果可以的话还是手动下载最保险）
 
 在开始运行脚本前需要进行一些简单的设置：
 
 1.  在`token.json`文件中填入自己的学号（id）和密码（password）
-2.  在`./library/settings.py`文件中找到`browser`键把后面的值修改成你电脑上安装了的浏览器（目前只支持使用相同内核的`edge`和`chrome`浏览器，计划过两天添加对`firefox`的支持）
+2.  在`./library/settings.py`文件中找到`browser`键把后面的值修改成你电脑上安装了的浏览器
 3.  [可选] 如果你已经开始答题了，就需要在`./library/settings.py`文件中找到`theme`键把对应的值修改成你所选取的皮肤即可。（这一步对于已经开始答题的同学十分重要，因为这个网站更换皮肤以后所有标签的`class`和`id`甚至页面布局都会改变。这就需要通过使用不同的css选择器来定位元素）
 
 ### 运行
@@ -56,7 +56,11 @@ script_settings = {
     # 本机使用的浏览器（要与所使用的驱动文件对应）
     #  - edge
     #  - chrome
+    #  - firefox
     "browser": "edge",
+
+    # Github个人令牌（防止github访问限制导致的下载驱动失败）
+    "GitHub_token": "",
 
     # 每次获取元素时等待的时间（秒）
     # 减小这个值可以进一步缩短答题时间，只要你的网和配置都足够甚至可以10秒以内完成
@@ -110,6 +114,10 @@ pip install -r requirements.txt
 
 *悄悄告诉你，也可以通过双击`install_requirement.bat`文件再次安装依赖，~~那些不认真看文档的人肯定看不见这行~~*字
 
+## 设置GitHub个人令牌
+
+GitHub对于匿名访问有限制（60次每小时），可能会影响到个别需要从GitHub上下载的驱动。增加上限需要申请一个GitHub个人令牌，申请方式见[这里](https://docs.github.com/cn/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)。然后把申请到的令牌填在 `settings.py` 的 `GitHub_token` 键中。
+
 ## 特性
 
 -   能够以飞一般的速度答题
@@ -118,11 +126,12 @@ pip install -r requirements.txt
 -   自动判断是否完成，如果以后增加了同一关卡中的题目数量也不会出问题
 -   完美适配目前的三种皮肤，并且通过`json`文件存储css选择器，方便添加新皮肤后进行维护
 -   可以手动调节每次定位前等待时间，在保证定位正常的情况下尽可能的缩短答题时间
--   使用`web-driver-manager`适配多种浏览器，并且能够自动下载对应的浏览器驱动
+-   使用[webdriver_manager](https://github.com/SergeyPirogov/webdriver_manager))适配多种浏览器，并且能够自动下载对应的浏览器驱动
 -   自动识别二维码
--   使用`easyocr`进行本地二维码识别
--   使用`baidu-aip`，支持使用百度文字识别api进行二维码识别，以提高识别的准确率
+-   使用[easyocr](https://github.com/JaidedAI/EasyOCR)进行本地二维码识别
+-   使用[baidu-aip](https://github.com/Baidu-AIP/python-sdk)，支持使用百度文字识别api进行二维码识别，以提高识别的准确率
 -   首次使用脚本可以自动安装依赖的`pip`包
+-   可以支持使用大多数主流的浏览器（edge、chrome、firefox）
 
 ## 贡献者
 

@@ -4,12 +4,22 @@
 Author: BATU1579
 Date: 2021-08-11 15:20:04
 LastEditors: BATU1579
-LastEditTime: 2021-08-15 22:29:58
+LastEditTime: 2021-08-16 22:33:54
 Description: file content
 '''
 import logging
 import library.const as g
 from time import sleep
+
+
+def set_github_token():
+    if g.GH_TOKEN != "":
+        # 设置github访问令牌
+        import os
+        os.environ['GH_TOKEN'] = g.GH_TOKEN
+        g.LOG.debug("设置环境变量GH_TOKEN为: %s" % g.GH_TOKEN)
+    else:
+        g.LOG.warning("未设置github个人令牌，可能会因为访问限制下载驱动失败")
 
 
 # 加载不同浏览器的驱动
@@ -29,6 +39,14 @@ elif g.BROWSER == "chrome":
     from selenium.webdriver import ChromeOptions
     options = ChromeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-logging"])  # 不显示日志
+
+elif g.BROWSER == "firefox":
+    # firefox驱动设置
+    from selenium.webdriver import Firefox as Driver
+    from library.webdriver_manager.firefox import GeckoDriverManager as Manager
+    from selenium.webdriver import FirefoxOptions
+    options = FirefoxOptions()
+    set_github_token()
 
 else:
     g.LOG.error("暂不支持 %s 浏览器" % g.BROWSER)
@@ -53,6 +71,7 @@ def common_options():
 
 def get_broswer():
     driver_path = g.DRIVER_PATH
+
     if driver_path == "":
         # 下载匹配的驱动
         driver_path = Manager(
