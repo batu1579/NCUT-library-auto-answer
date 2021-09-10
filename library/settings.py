@@ -4,7 +4,7 @@
 Author: BATU1579
 Date: 2021-08-12 04:31:20
 LastEditors: BATU1579
-LastEditTime: 2021-08-16 23:20:42
+LastEditTime: 2021-09-04 17:50:13
 Description: scripts settings
 '''
 
@@ -37,6 +37,9 @@ script_settings = {
 
     # 验证码图像阈值
     "threshold_value": 130,
+
+    # 手动输入验证码
+    "use_input_veri": True,
 
     # 使用百度api识别验证码
     "use_baidu_api": False,

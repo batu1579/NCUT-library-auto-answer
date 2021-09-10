@@ -4,7 +4,7 @@
 Author: BATU1579
 Date: 2021-08-08 17:00:33
 LastEditors: BATU1579
-LastEditTime: 2021-08-15 17:18:44
+LastEditTime: 2021-09-04 17:52:28
 Description: file content
 '''
 import library.requirements
@@ -131,6 +131,14 @@ def local_reco():
         return True
 
 
+def manually_reco():
+    g.LOG.debug("正在使用手动输入验证码...")
+    veri_code = input("请输入验证码：")
+    browser.find_element_by_id("pVCode").send_keys(veri_code)
+    click_element("#btnLogin")
+    return is_veri_code_correct()
+
+
 def login() -> bool:
     # 输入用户名和密码
     token = get_json_data(".\\token.json")
@@ -139,6 +147,10 @@ def login() -> bool:
 
     # 填写验证码(直到输对)
     g.LOG.info("正在尝试登录...")
+
+    # 手动输入验证码
+    if g.USE_INPUT_VERI:
+        return manually_reco()
 
     # 使用百度api识别
     if not g.USE_BAIDU_API:

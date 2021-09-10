@@ -4,8 +4,8 @@
 Author: BATU1579
 Date: 2021-08-10 16:49:21
 LastEditors: BATU1579
-LastEditTime: 2021-08-16 23:20:28
-Description: file content
+LastEditTime: 2021-09-04 18:46:23
+Description: 存储常量
 '''
 from loguru import logger
 from library.use_data import get_json_data
@@ -37,6 +37,8 @@ SHOW_WINDOW     = CONST["show_window"]
 
 VERI_CODE_PATH  = CONST["veri_code_path"]
 THRESHOLD_VALUE = CONST["threshold_value"]
+
+USE_INPUT_VERI  = CONST["use_input_veri"]
 
 USE_BAIDU_API   = CONST["use_baidu_api"]
 API_TOKEN_PATH  = CONST["api_token_path"]
