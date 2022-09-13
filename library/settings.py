@@ -4,7 +4,7 @@
 Author: BATU1579
 CreateDate: 2021-08-12 04:31:20
 LastEditor: BATU1579
-LastTime: 2022-08-20 20:37:04
+LastTime: 2022-09-13 16:50:15
 FilePath: \\library\\settings.py
 Description: scripts settings
 '''
@@ -27,7 +27,7 @@ browser = "edge"
 GitHub_token = ""
 
 # 每次获取元素时等待的时间（秒）
-wait_time = 0.1
+wait_time = 0.3
 
 # 运行时显示浏览器窗口
 show_window = True
