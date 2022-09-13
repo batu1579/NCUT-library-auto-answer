@@ -54,9 +54,7 @@
 
 ### 运行
 
-双击文件夹中的 `run.bat` 文件即可运行程序。
-
-也可以在终端中打开文件夹通过下面的指令打开：
+使用指令运行：
 
 ```shell
 python main.py
@@ -97,6 +95,10 @@ veri_code_path = ".\\src\\img\\veri_code.png",
 # 可以在识别过程中在存放验证码的地方查看效果
 threshold_value = 130,
 
+# 手动输入验证码
+# 建议使用百度 api 或者手动输入，因为网络问题 easyocr 的模型经常下载失败。
+use_input_veri = True
+
 # 使用百度api识别验证码
 use_baidu_api = False,
 
@@ -120,20 +122,6 @@ theme = "student"
 1. 在 `./library/settings.py` 文件中将 `use_baidu_api` 键对应的值改为`true` 。
 2. 在 `api_token.json` 文件中填入申请到的 `app id` 、`api key` 、`secret key` 分别填入对应的键中。
 
-## 自动安装依赖
-
-脚本会在首次运行后安装依赖，以后的运行中不会重复安装。但是你可以手动让脚本进行一次更新：
-
-你可以通过以下命令再次安装依赖：
-
-```shell
-pip install -r requirements.txt
-```
-
-你还可以通过将`library/run_time.json`文件中的`is_first_time`键对应的值改为`true`来使下一次运行前自动安装依赖
-
-_悄悄告诉你，也可以通过双击`install_requirement.bat`文件再次安装依赖， ~~那些不认真看文档的人肯定看不见这行字。~~_
-
 ## 设置 GitHub 个人令牌
 
 GitHub 对于匿名访问有限制（60次每小时），可能会影响到个别需要从 GitHub 上下载的驱动。增加上限需要申请一个 GitHub 个人令牌，申请方式见 [这里](https://docs.github.com/cn/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) 。然后把申请到的令牌填在 `settings.py` 的 `GitHub_token` 键中。
@@ -150,7 +138,6 @@ GitHub 对于匿名访问有限制（60次每小时），可能会影响到个�
 - 自动识别二维码。
 - 使用 [easyocr](https://github.com/JaidedAI/EasyOCR) 进行本地二维码识别。
 - 支持使用 [baidu-aip](https://github.com/Baidu-AIP/python-sdk) 提高二维码识别的准确率。
-- 首次使用脚本可以自动安装依赖的 `pip` 包。
 - 可以支持使用大多数主流的浏览器（edge、chrome、firefox）。
 
 ## 声明
