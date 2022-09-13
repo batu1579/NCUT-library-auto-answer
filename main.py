@@ -325,9 +325,8 @@ except Exception as error_info:
     browser.save_screenshot(".\\logs\\error_screenshot.png")
 
     # 记录错误信息
-    if g.DEV_MODE:
-        g.LOG.exception("错误信息：")
-    else:
-        g.LOG.error("出现错误，请重试或提交log文件夹下最新的日志文件与浏览器截图到新生群 ！")
+    g.LOG.exception("错误信息：")
+    g.LOG.error("出现错误，请重试或提交 log 文件夹下最新的日志文件与浏览器截图到 issue 页面 ！")
+
 browser.quit()
 g.LOG.info("浏览器已关闭 ！")
