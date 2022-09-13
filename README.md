@@ -10,15 +10,36 @@
 
 > 使用魔法，飞一样的完成图书馆答题。\~(￣▽￣)\~\*
 >
-> 欢迎各位大佬帮我一起完善这个项目！如果有好的建议或者想反馈bug可以在新生群@我或者 [提交issue](https://github.com/batu1579/NCUT-library-auto-answer/issues/new) 。
+> 欢迎各位大佬帮我一起完善这个项目！如果有好的建议或者想反馈bug可以 [提交issue](https://github.com/batu1579/NCUT-library-auto-answer/issues/new) 。
 
-## 安装依赖
+## 使用方法
 
 > 此脚本需要安装 Python3.10 版本以上的解释器才能使用，还没有安装的同学可以看这个 [教程](https://zhuanlan.zhihu.com/p/344887837) 。
 
-1. 下载脚本并解压。
+### 安装依赖
 
-## 使用方法
+1. 下载脚本：
+
+    - [下载新的发布版本](https://github.com/batu1579/NCUT-library-auto-answer/releases)
+    - [下载源码](https://github.com/batu1579/NCUT-library-auto-answer/archive/refs/heads/main.zip)
+
+2. 使用指令安装依赖：
+
+    可以使用 pip 安装在本地环境：
+
+    ```shell
+    pip install -r requirements.txt
+    ```
+
+    也可以使用 pipenv 创建虚拟环境并安装（推荐，但是需要提前配置好 pipenv ）：
+
+    ```shell
+    # 安装依赖
+    pipenv install
+
+    # 激活虚拟环境
+    pipenv shell
+    ```
 
 ### 设置
 
@@ -26,7 +47,7 @@
 
 在开始运行脚本前需要进行一些简单的设置：
 
-1. 在 `token.json` 文件中填入自己的学号（ `id` ）和密码（ `password` ）。
+1. 在 `token.json` 文件中填入自己的学号（ `id` ）和密码（ `password` ），其中密码是 `NCUT` + 身份证后六位。
 2. 在 `./library/settings.py` 文件中找到 `browser` 键把后面的值修改成你电脑上安装了的浏览器。
 3. [可选] 如果你已经开始答题了，就需要在 `./library/settings.py` 文件中找到 `theme` 键把对应的值修改成你所选取的皮肤即可（这一步对于已经开始答题的同学十分重要，因为这个网站更换皮肤以后所有标签的 `class` 和 `id` 甚至页面布局都会改变。这时需要通过使用不同的 CSS 选择器来定位元素）。
 
@@ -62,8 +83,8 @@ browser = "edge"
 GitHub_token = ""
 
 # 每次获取元素时等待的时间（秒）
-# 减小这个值可以进一步缩短答题时间，只要你的网和配置都足够甚至可以10秒以内完成
-wait_time = 0.1
+# 减小这个值可以进一步缩短答题时间，但是如果设置的过小会因为页面来不及显示而出错
+wait_time = 0.3
 
 # 运行时显示浏览器窗口（如果你连看都不想看那个题就可以关上）
 show_window = True
