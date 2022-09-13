@@ -10,11 +10,12 @@
 
 > 使用魔法，飞一样的完成图书馆答题。\~(￣▽￣)\~\*
 >
-> 欢迎各位大佬帮我一起完善这个项目！如果有好的建议或者想反馈bug可以 [提交issue](https://github.com/batu1579/NCUT-library-auto-answer/issues/new) 。
+> 如果有好的建议或者想反馈bug可以 [提交issue](https://github.com/batu1579/NCUT-library-auto-answer/issues/new) 。
 
 ## 使用方法
 
-> 此脚本需要安装 Python3.10 版本以上的解释器才能使用，还没有安装的同学可以看这个 [教程](https://zhuanlan.zhihu.com/p/344887837) 。
+> 此脚本需要安装 Python3.10 版本以上的解释器才能使用。
+> 还没有安装的同学可以看这个 [教程](https://zhuanlan.zhihu.com/p/344887837) 。
 
 ### 安装依赖
 
