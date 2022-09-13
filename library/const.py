@@ -4,7 +4,7 @@
 Author: BATU1579
 CreateDate: 2021-08-10 16:49:21
 LastEditor: BATU1579
-LastTime: 2022-08-20 20:34:44
+LastTime: 2022-09-13 09:17:48
 FilePath: \\library\\const.py
 Description: 存储常量
 '''
@@ -40,6 +40,8 @@ USE_INPUT_VERI = settings.use_input_veri
 USE_BAIDU_API = settings.use_baidu_api
 API_TOKEN_PATH = settings.api_token_path
 RETRY_NUM = settings.retry_num
+
+THEME_NAME = settings.theme
 
 # 读取皮肤文件
 THEME = get_json_data(".\\src\\themes\\%s.json" % settings.theme)

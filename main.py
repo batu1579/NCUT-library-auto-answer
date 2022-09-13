@@ -172,7 +172,7 @@ def get_selections() -> dict:
     num_list = [i + 1 for i in range(len(li))]
     # 获取全部选项内容
     for num in num_list:
-        index =  num + 3 if g.CONST["theme"] == "student" else num
+        index =  num + 3 if g.THEME_NAME == "student" else num
         data[get_element_text(g.THEME["selection"] % index)] = num
     return data
 
@@ -194,7 +194,7 @@ def select_answer(ans: int):
     """
     ans = 1 or 2 or 3 or 4
     """
-    ans_amend = (ans + 3) if g.CONST["theme"] == "student" else ans
+    ans_amend = (ans + 3) if g.THEME_NAME == "student" else ans
     click_element(g.THEME["check_box"] % ans_amend)
     g.LOG.debug("选择选项： %s" % trans(ans))
     click_element("#btnSubmit")
@@ -225,7 +225,7 @@ def ans_question() -> bool:
 
 def start_ans() -> bool:
     # 点击闯关
-    if g.CONST["theme"] == "warrior":
+    if g.THEME_NAME == "warrior":
         sleep(2)
     click_element(g.THEME["start_test"])
     # 曾经答过则跳出
@@ -294,7 +294,7 @@ def main():
     if browser.find_element_by_id("btnTheme").is_displayed():
         theme_list = ["student", "warrior", "school"]
         selector = ".items > ul > li:nth-child(%d) > a > input" % (
-            theme_list.index(g.CONST["theme"]) + 1)
+            theme_list.index(g.THEME_NAME) + 1)
         click_element(selector)
         click_element("#btnTheme")
 
