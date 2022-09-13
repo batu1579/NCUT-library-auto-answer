@@ -7,7 +7,7 @@ LastEditors: BATU1579
 LastEditTime: 2021-08-16 14:56:23
 Description: file content
 '''
-from json5 import load, dump
+from json import load, dump
 import library.const as g
 
 
@@ -17,7 +17,7 @@ def get_file_data(file_path: str) -> dict:
         return fp.read()
 
 
-def get_json_data(file_path: str) -> dict:
+def get_json_data(file_path: str) -> dict[str, str]:
     g.LOG.debug("正在从文件 %s 中读取json数据" % file_path)
     with open(file_path, "rb") as fp:
         return load(fp)

@@ -4,10 +4,10 @@
 Author: BATU1579
 Date: 2021-08-11 15:20:04
 LastEditors: BATU1579
-LastEditTime: 2021-08-16 22:33:54
+LastTime: 2021-08-16 22:33:54
+FilePath: \\library\\get_driver.py
 Description: file content
 '''
-import logging
 import library.const as g
 from time import sleep
 
@@ -57,6 +57,7 @@ class WaitDriver(Driver):
     def find_element_by_id(self, id_):
         sleep(g.WAIT_TIME)
         return super().find_element_by_id(id_)
+
     def find_element_by_css_selector(self, css_selector):
         sleep(g.WAIT_TIME)
         return super().find_element_by_css_selector(css_selector)

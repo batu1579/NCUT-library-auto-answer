@@ -11,7 +11,6 @@ import library.const as g
 from time import sleep
 from PIL import Image
 from aip import AipOcr
-from loguru import logger
 from os.path import exists
 from library.easyocr import easyocr
 from library.get_driver import get_broswer
