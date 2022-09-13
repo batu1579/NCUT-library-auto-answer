@@ -223,6 +223,9 @@ def ans_question() -> bool:
 
 
 def start_ans() -> bool:
+    
+    browser.execute_script("isVisitAll = \"True\";")
+    
     # 点击闯关
     if g.THEME_NAME == "warrior":
         sleep(2)

@@ -4,12 +4,14 @@
 Author: BATU1579
 Date: 2021-08-11 15:20:04
 LastEditors: BATU1579
-LastTime: 2021-08-16 22:33:54
+LastTime: 2022-09-13 17:09:12
 FilePath: \\library\\get_driver.py
 Description: file content
 '''
 import library.const as g
+
 from time import sleep
+from selenium.webdriver.remote.command import Command
 
 
 def set_github_token():
@@ -61,6 +63,28 @@ class WaitDriver(Driver):
     def find_element_by_css_selector(self, css_selector):
         sleep(g.WAIT_TIME)
         return super().find_element_by_css_selector(css_selector)
+    
+    def execute_script(self, script, *args):
+        """
+        Synchronously Executes JavaScript in the current window/frame.
+
+        :Args:
+         - script: The JavaScript to execute.
+         - \*args: Any applicable arguments for your JavaScript.
+
+        :Usage:
+            driver.execute_script('return document.title;')
+        """
+        converted_args = list(args)
+        command = None
+        if self.w3c:
+            command = Command.W3C_EXECUTE_SCRIPT
+        else:
+            command = Command.EXECUTE_SCRIPT
+
+        return super().execute(command, {
+            'script': script,
+            'args': converted_args})['value']
 
 
 def common_options():
