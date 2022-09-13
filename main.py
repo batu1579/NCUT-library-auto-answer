@@ -7,9 +7,7 @@ LastEditors: BATU1579
 LastEditTime: 2021-09-04 17:52:28
 Description: file content
 '''
-import library.requirements
 import library.const as g
-from json5 import loads, dump
 from time import sleep
 from PIL import Image
 from aip import AipOcr
